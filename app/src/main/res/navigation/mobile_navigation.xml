@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_tcp">
+
+    <fragment
+        android:id="@+id/nav_tcp"
+        android:name="com.minivision.moe.ui.tcp.TcpFragment"
+        android:label="@string/menu_tcp"
+        tools:layout="@layout/fragment_tcp" />
+
+    <fragment
+        android:id="@+id/nav_udp"
+        android:name="com.minivision.moe.ui.gallery.UdpFragment"
+        android:label="@string/menu_udp"
+        tools:layout="@layout/fragment_udp" />
+
+    <fragment
+        android:id="@+id/nav_websocket"
+        android:name="com.minivision.moe.ui.slideshow.WebSocketFragment"
+        android:label="@string/menu_websocket"
+        tools:layout="@layout/fragment_websocket" />
+</navigation>

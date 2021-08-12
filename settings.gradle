@@ -1,0 +1,3 @@
+include ':moe'
+include ':app'
+rootProject.name = "moe"
