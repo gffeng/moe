@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
-    id 'maven'
 }
 
 def version_name='1.0.1.2'
@@ -13,8 +12,6 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
-        versionName version_name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -49,41 +46,4 @@ dependencies {
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2"
     implementation 'com.minivision.parameter.util:minivisionlogger:1.3.5'
     implementation 'com.google.code.gson:gson:2.8.6'
-}
-
-
-def MAVEN_REMOTE_PATH = 'http://172.16.6.79:8081/nexus/content/repositories/releases/'
-//服务端ip地址端口及放置的目录
-def ARTIFACT_ID = 'moe-pad'
-//artifactId
-def VERSION_NAME = version_name
-//版本名称
-def GROUP_ID = 'com.minivision.moe'
-//groupId
-def PROJECT_NAME = 'moe'
-def ACCOUNT = 'deployment'
-def PASSWORD = 'deployment123'
-//脚本：将Lib打成aar包上传至maven私有库
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: MAVEN_REMOTE_PATH) {
-                authentication(userName: ACCOUNT, password: PASSWORD)
-            }
-            pom.project {
-                name PROJECT_NAME
-                groupId GROUP_ID
-                artifactId ARTIFACT_ID
-                version VERSION_NAME
-                packaging 'aar'
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                        distribution 'repo'
-                    }
-                }
-            }
-        }
-    }
 }

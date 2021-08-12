@@ -1,7 +1,7 @@
 # 集成说明
 ## 1.gradle集成
 ```
-implementation 'com.minivision.moe:moe-pad:1.0.0'
+implementation '***'
 ```
 ## 2.初始化
 ```kotlin
